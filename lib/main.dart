@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'routes/first.dart';
+import 'routes/HomePage.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lab 02',
+      title: "Save A Friend",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Laboratorio 02 Navegación"),
+          title: Text("Salva a un amigo"),
         ),
-        body: First(),
+        body: HomePage(),
       )
     );
   }
