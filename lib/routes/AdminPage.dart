@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab_02/routes/AddPetPage.dart';//importamos Añadir amigo
+import 'package:lab_02/routes/AddPetPage.dart';
+import 'package:lab_02/routes/EditPetPage.dart';//importamos Añadir amigo
 
 class AdminPage extends StatelessWidget {
   @override
@@ -27,8 +28,8 @@ class AdminPage extends StatelessWidget {
           ),
           body: TabBarView(//body del tabbar controller
             children: [//array (debe ser el mismo que se declara en length)
-              favs(),//función favoritos
-              server(),//función server
+              favs(context),//función favoritos
+              server(context),//función server
             ],
           ),
           //declaramos un floating button
@@ -47,52 +48,69 @@ class AdminPage extends StatelessWidget {
     );
   }
 
-  Widget favs () {
-    //retornamos solo un texto
-    return Text('aquí van mis favoritos');
-  }
-
-  Widget server () {
-    return ListView(
-      children: <Widget>[
-        Divider(height: 15.0),
-        Card(
-          margin: EdgeInsets.all(5.0),
-          child: ListTile(
-            title: Text('Amigo'),
-            subtitle: Text('Edad: 0 años'),
-            leading: Image.asset('images/logo_flutter.png'),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+  Widget favs (BuildContext context) {//añadimos un param context para la ruta
+    return ListView(//cambiamos el texto por un listView
+      children: <Widget>[//array
+        Divider(height: 15.0),//espacio por encima del primer listview
+        Card(//card
+          margin: EdgeInsets.all(5.0),//margen
+          child: ListTile(//Listile para ordenar
+            title: Text('Amigo'),//titulo
+            subtitle: Text('Edad: 0 años'),//subtitulo
+            leading: Image.asset('images/logo_flutter.png'),//icono
+            trailing: Row(//Row para acomodar iconos al final
+              mainAxisSize: MainAxisSize.min,//ordenamiento horizontal
+              children: <Widget>[//array
                 IconButton(
                   icon: Icon(Icons.edit),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                        //navegar a editar amigo
+                        builder: (context) => EditPetPage()
+                      ),
+                    );
+                  },
                 ),
-                IconButton(
-                  icon: Icon(Icons.delete),
-                  onPressed: () {},
+                IconButton(//icono con botón
+                  icon: Icon(Icons.delete),//icono
+                  onPressed: () {},//evento press eliminar
                 ),
               ],
             ),
           ),
         ),
-        Card(
-          margin: EdgeInsets.all(5.0),
-          child: ListTile(
-            title: Text('Amigo'),
-            subtitle: Text('Edad: 0 años'),
-            leading: Image.asset('images/logo_flutter.png'),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+      ]
+    );
+  }
+
+  Widget server (BuildContext context) {
+    return ListView(//cambiamos el texto por un listView
+      children: <Widget>[//array
+        Divider(height: 15.0),//espacio por encima del primer listview
+        Card(//card
+          margin: EdgeInsets.all(5.0),//margen
+          child: ListTile(//Listile para ordenar
+            title: Text('Amigo'),//titulo
+            subtitle: Text('Edad: 0 años'),//subtitulo
+            leading: Image.asset('images/logo_flutter.png'),//icono
+            trailing: Row(//Row para acomodar iconos al final
+              mainAxisSize: MainAxisSize.min,//ordenamiento horizontal
+              children: <Widget>[//array
                 IconButton(
                   icon: Icon(Icons.edit),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                        //navegar a editar amigo
+                        builder: (context) => EditPetPage()
+                      ),
+                    );
+                  },
                 ),
-                IconButton(
-                  icon: Icon(Icons.delete),
-                  onPressed: () {},
+                IconButton(//icono con botón
+                  icon: Icon(Icons.delete),//icono
+                  onPressed: () {},//evento press eliminar
                 ),
               ],
             ),
