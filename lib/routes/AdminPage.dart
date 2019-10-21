@@ -53,7 +53,52 @@ class AdminPage extends StatelessWidget {
   }
 
   Widget server () {
-    //retornamos solo un texto
-    return Text('aquí van los datos del web server');
+    return ListView(
+      children: <Widget>[
+        Divider(height: 15.0),
+        Card(
+          margin: EdgeInsets.all(5.0),
+          child: ListTile(
+            title: Text('Amigo'),
+            subtitle: Text('Edad: 0 años'),
+            leading: Image.asset('images/logo_flutter.png'),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.edit),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
+        ),
+        Card(
+          margin: EdgeInsets.all(5.0),
+          child: ListTile(
+            title: Text('Amigo'),
+            subtitle: Text('Edad: 0 años'),
+            leading: Image.asset('images/logo_flutter.png'),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.edit),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
+        ),
+      ]
+    );
   }
 }
