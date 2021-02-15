@@ -1,6 +1,6 @@
-# lab_02
+# lab_02_flutter_curso
 
-A new Flutter project.
+pet amigos
 
 ## Getting Started
 

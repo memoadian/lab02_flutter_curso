@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab_02/routes/DetailPetPage.dart';//importamos la página de detalle
+import 'package:lab_02_flutter_curso/routes/DetailPetPage.dart';//importamos la página de detalle
 
 class HomePage extends StatelessWidget {
   @override
