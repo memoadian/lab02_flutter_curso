@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
                       MaterialPageRoute(
                         //instancia Material Page Route
                         builder: (context) =>
-                            AdminPage(), //mandamos al adminpage
+                            AdminPetPage(), //mandamos al adminpage
                       ),
                     );
                   },
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           /* FIN DRAWER */
-          body: HomePage(),
+          body: HomePetPage(),
         ),
       ),
     );
